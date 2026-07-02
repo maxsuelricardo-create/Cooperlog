@@ -1,0 +1,71 @@
+{
+  "entities": {
+    "carregamento": {
+      "title": "Carregamento",
+      "description": "Shipment audit and tracking info",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "pedido": { "type": "string" },
+        "notaFiscal": { "type": "string" },
+        "cliente": { "type": "string" },
+        "transportadora": { "type": "string" },
+        "motorista": { "type": "string" },
+        "placa": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "status": { "type": "string" },
+        "protocolo": { "type": "string" },
+        "finalizedAt": { "type": "string" },
+        "numeroLacre": { "type": "string" },
+        "lacreTransportadora": { "type": "string" },
+        "filialId": { "type": "string" },
+        "filialName": { "type": "string" }
+      },
+      "required": ["id", "pedido", "notaFiscal", "cliente", "transportadora", "motorista", "placa", "status"]
+    },
+    "filial": {
+      "title": "Filial",
+      "description": "Operational company branches",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "cnpj": { "type": "string" },
+        "name": { "type": "string" },
+        "city": { "type": "string" },
+        "state": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "cnpj", "name", "city", "state", "createdAt"]
+    },
+    "usuario": {
+      "title": "Usuario",
+      "description": "User roles and login credentials",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "password": { "type": "string" },
+        "role": { "type": "string" },
+        "filialId": { "type": "string" },
+        "filialName": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "username", "role", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/carregamentos/{carregamentoId}": {
+      "schema": "carregamento",
+      "description": "Collection of shipment loading audit logs"
+    },
+    "/filiais/{filialId}": {
+      "schema": "filial",
+      "description": "Collection of business branches"
+    },
+    "/usuarios/{usuarioId}": {
+      "schema": "usuario",
+      "description": "Collection of registered system users"
+    }
+  }
+}

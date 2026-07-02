@@ -1,0 +1,6 @@
+{
+  "name": "CooperLog",
+  "description": "Sistema de registro de evidências e rastreabilidade para o processo de carregamento de mercadorias da Cooperacre.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
